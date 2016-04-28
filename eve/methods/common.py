@@ -689,7 +689,7 @@ def subdocuments(fields_chain, resource, document):
         try:
             resource = field_definition(
                 resource, fields_chain[0])['data_relation']['resource']
-        except KeyError:
+        except (KeyError, TypeError):
             resource = resource
 
         for doc in docs:
